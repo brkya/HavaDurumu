@@ -1,0 +1,12 @@
+extends ../layouts/main-layout.pug
+
+block content
+    form(action="/admin/lokasyonekle" method="POST")
+        .form-group.row
+            label(for="location").col-sm-2.col-form-label Lokasyon İsmi :
+            .col-sm-3
+                input.form-control#location(type="text" name="location")
+
+        .form-group.row
+            .col-sm-10.offset-sm-2
+                input(type="submit" value="Lokasyonu Ekle").btn.btn-primary

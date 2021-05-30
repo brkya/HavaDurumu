@@ -1,0 +1,31 @@
+extends ../layouts/main-layout.pug
+
+block content
+    if (action !== 'undefined' && action === 'delete')
+        div.alert.alert-danger The product has been deleted.
+
+    if (action !== 'undefined' && action === 'edit')
+        div.alert.alert-success The product has been updated.
+    
+    if location.length > 0
+        table.table.table-bordered
+            thead
+                tr
+                    th Lokasyon Ismi
+                    th ID
+                    th
+
+            tbody
+                each locations in location
+                    tr
+                        td #{locations.cityName}
+                        td #{locations._id}
+                        
+                        td
+                            a.btn.btn-primary.btn-sm.mr-2(href=`/admin/lokasyon/${locations._id}`) Edit
+
+                            form(action='/admin/lokasyonsil' method='POST')
+                                input(type='hidden' name='locationId' value=`${locations._id}`)
+                                button(type='submit').btn.btn-danger.btn-sm Delete
+    else
+        h1 No Location

@@ -1,0 +1,104 @@
+.pt-100 {
+    padding-top: 100px;
+}
+body {
+    color: #fff;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: #15202b;
+    background-repeat: no-repeat
+}
+
+.card {
+    background-size: cover;
+    width: 600px;
+    height: 350px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px 4px #9E9E9E;
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+
+.time-font {
+    font-size: 50px
+}
+
+.sm-font {
+    font-size: 18px
+}
+
+.med-font {
+    font-size: 28px
+}
+
+.large-font {
+    font-size: 60px
+}
+
+.navbar-default{
+    background-color: #5a15fc;
+}
+
+p:first-letter {
+    text-transform:capitalize;
+}
+
+.login-wrapper .loginbox {
+	background-color: #5a15fc;
+	border-radius: 20px;
+	box-shadow: 0 0 13px 0 rgba(82,63,105,0.05);
+	display: flex;
+	margin: 1.875rem auto;
+	max-width: 450px;
+	width: 100%;
+}
+.login-wrapper .loginbox .login-left {
+	align-items: center;
+	background: linear-gradient(180deg, #8BC34A, #00bcd4);
+	border-radius: 6px 0 0 6px;
+	flex-direction: column;
+	justify-content: center;
+	padding: 80px;
+	width: 450px;
+	display: flex;
+}
+.login-wrapper .loginbox .login-right {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 2rem;
+	width: 450px;
+}
+.login-wrapper .loginbox .login-right .login-right-wrap {
+	max-width: 100%;
+	flex: 0 0 100%;
+}
+.login-wrapper .loginbox .login-right h1 {
+	font-size: 26px;
+	font-weight: 500;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.login-wrapper .loginbox .login-right .forgotpass a {
+	color: #a0a0a0;
+}
+.login-wrapper .loginbox .login-right .forgotpass a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+.login-wrapper .loginbox .login-right .dont-have {
+	color: #a0a0a0;
+	margin-top: 1.875rem;
+}
+.login-wrapper .loginbox .login-right .dont-have a {
+	color: #333;
+}
+.login-wrapper .loginbox .login-right .dont-have a:hover {
+	text-decoration: underline;
+}
+
+
+.btn-ozeel{
+	background-color:#ff9e00
+}

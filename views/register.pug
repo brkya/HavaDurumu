@@ -1,0 +1,32 @@
+extends ./layouts/main-layout.pug
+
+block content    
+    .main-wrapper.login-body
+        .login-wrapper
+            .container
+                .loginbox
+                    .login-right
+                        .login-right-wrap
+                            h1 Register
+                            // Form
+                            form(action="/register" method="POST")
+                                .form-group
+                                    label.form-control-label User Name
+                                    input.form-control(type="text" name="userName" required)
+                                .form-group
+                                    label.form-control-label Email Address
+                                    input.form-control(type="text" name="email" required)
+                                .form-group
+                                    label.form-control-label Password
+                                    input.form-control(type="password" name="password" required)
+                                .form-group
+                                    label.form-control-label Confirm Password
+                                    input.form-control(type="password" name="confpassword" required)
+                                .form-group.mb-0
+                                    button.btn.btn-lg.btn-block.btn-ozeel(type='submit') Register
+                            // /Form
+                            .login-or
+                            span.or-line
+                            .text-center.dont-have
+                                | Already have an account? 
+                                a(style={color:'white'}, href='/login') Login

@@ -1,0 +1,13 @@
+extends ../layouts/main-layout.pug
+
+block content
+    form(action="/admin/lokasyonduzenle" method="POST")
+        input(type="hidden" name="id" value=`${location._id}`)
+        .form-group.row
+            label(for="location").col-sm-2.col-form-label Lokasyon İsmi :
+            .col-sm-3
+                input.form-control#location(type="text" name="cityName" value=`${location.cityName}`)
+
+        .form-group.row
+            .col-sm-10.offset-sm-2
+                input(type="submit" value="Lokasyonu Duzenle").btn.btn-primary

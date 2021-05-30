@@ -1,0 +1,26 @@
+extends ./layouts/main-layout.pug
+
+block content 
+
+    .main-wrapper.login-body
+        .login-wrapper
+            .container
+                .loginbox
+                    .login-right
+                        .login-right-wrap
+                            h1 Login
+                            form(action='/login' method= 'POST')
+                                .form-group
+                                    label.form-control-label User Name
+                                    input.form-control(type='text' name='userName' required)
+                                .form-group
+                                    label.form-control-label Password
+                                    .pass-group
+                                    input.form-control.pass-input(type='password' name='password' required)
+                                .form-group
+                                    button.btn.btn-lg.btn-block.btn-ozeel(type='submit') Login
+                                .login-or
+                                    span.or-line
+                                .text-center.dont-have
+                                    | Don&apos;t have an account yet?
+                                    a(style={color:"white"},href='/register') Register

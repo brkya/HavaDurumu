@@ -1,0 +1,23 @@
+extends ./layouts/main-layout.pug
+
+block content
+
+
+    table.table.table-bordered
+        thead
+            tr
+                th User Id
+                th Username
+                th Lokasyon Ismi
+                th Tarih
+                th Ip Adresi
+
+        tbody
+            each rapors in rapor
+                if `${session.user.username}` == `${rapors.username}`
+                    tr
+                        td #{rapors.userId}
+                        td #{rapors.username}
+                        td #{rapors.lokasyonName}
+                        td #{rapors.date}
+                        td #{rapors.ipAdress}

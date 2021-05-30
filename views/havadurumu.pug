@@ -1,0 +1,29 @@
+extends ./layouts/main-layout.pug
+
+block content
+    form(action="/havadurumu" method="POST")
+    
+        h1 Hava Durumu Deneme
+        .form-group.row
+            .col-sm-10.offset-sm-2
+                label(for="sehir").col-sm-2.col-form-label Şehir Seç
+                select(name="city" id="sehir").browser-default
+                    option(selected="") Şehir Seçiniz
+                    each locations in location
+                        option(value= (`${locations.cityName}`) ) #{locations.cityName}
+
+        .form-group.row
+            .col-sm-10.offset-sm-2
+                input(type="submit" value="Gonder").btn.btn-primary   
+
+        if name != undefined        
+            .container-fluid.px-1.px-md-4.py-5.mx-auto
+                .row.d-flex.justify-content-center.px-3
+                    .card(style="background-image:url('https://i.imgur.com/9dl0pV5.jpg'")
+                        h2.ml-auto.mr-4.mt-3.mb-0= (`${data.name}`)
+                        p.ml-auto.mr-4.mb-0.med-font=(`${data.weather[0].description}`)
+                        h1.ml-auto.mr-4.large-font=`${Math.round(data.main.temp)}°C`
+                        p.time-font.mb-0.ml-4.mt-auto
+                            = `${Math.round(data.main.temp_min)}°C / `
+                            span.sm-font 
+                            = `${Math.round(data.main.temp_max)}°C`  

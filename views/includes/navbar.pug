@@ -1,0 +1,47 @@
+nav.navbar.navbar-expand-lg.navbar-default.navbar-dark.fixed-top
+    .container
+        a(href="/").navbar-brand Hava Durumu
+        ul.navbar-nav.mr-auto    
+            if session.user != null
+                if session.user.auth == 'standart' || session.user.auth == 'admin'
+                    li.nav-item.active
+                        a(href="/havadurumu", class=(path === '/havadurumu'?'nav-link active':'nav-link')) Hava Durumu        
+
+                    li.nav-item.active
+                        a(href="/raporlar", class=(path==='/raporlar'?'nav-link active':'nav-link')) Raporlar
+                if session.user.auth == 'admin'
+                    li.nav-item.dropdown.active
+                        a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                            | Lokasyon Duzenle
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(href="/admin/lokasyonekle") Lokasyon Ekle
+                            a.dropdown-item(href="/admin/lokasyon") Lokasyon Duzenle
+
+                    li.nav-item.active
+                        a(href="/admin/user", class=(path==='/admin/user'?'nav-link active':'nav-link')) Kullanici Düzenle 
+
+
+
+
+        
+        if session.user == null
+            ul.navbar-nav.ml-auto
+            
+                li.nav-item.active
+                    a.nav-link(href="/login") Login
+                        
+                li.nav-item.active
+                    a.nav-link(href="/register") Register
+        else  
+            ul.navbar-nav.ml-auto
+
+                li.nav-item
+                    h3 #{session.user.username}
+
+                li.nav-item.active
+                    a.nav-link(href="/logout") Logout
+
+
+                
+
+            
